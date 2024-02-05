@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { JSX, SVGProps, useState , useEffect} from "react";
+import Upload from "./upload";
 
 export function MainPage() {
   const [title, setTitle] = useState("Loading");
@@ -78,8 +79,7 @@ export function MainPage() {
               </p>
             </div>
             <div className="flex flex-col space-y-4">
-              <input accept="video/*" className="w-full max-w-sm" type="file" />
-              <Button className="w-full max-w-sm">Upload and Blur Video</Button>
+              <Upload />
             </div>
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Download Your Blurred Video</h2>
