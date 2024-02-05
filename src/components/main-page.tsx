@@ -3,15 +3,6 @@ import { Button } from "@/components/ui/button";
 import { JSX, SVGProps, useState } from "react";
 
 export function MainPage() {
-
-  const [video, setVideo] = useState(null)
-  const handleFileChange = (e: { target: { video: any; }; }) => {
-    const video = e.target.video
-    setVideo(video)
-  }
-
-  const isVideo = (file: { type: string; }) => file.type.startsWith('video');
-
   return (
     <div className="flex justify-center bg-black">
       <div className="flex flex-col bg-gradient-to-r from-blue-400 via-white-500 to-green-500 min-h-screen w-full max-w-screen-xl">
