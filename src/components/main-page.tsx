@@ -7,7 +7,7 @@ export function MainPage() {
   const [objectList, setList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/data")
+    fetch("/api/data")
       .then(res => res.json()) // convert data to json
       .then((data) =>  {
         setTitle(data.title);
