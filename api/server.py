@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/api/data", methods=['GET'])
 def returnData():
     return jsonify({
-        'message': "Oh shit Flask connected with this page woahh",
+        'title': "BlurryFace: Blur Faces in Videos",
         'objects': ["Table", "Chair", "Car"]
     })
 

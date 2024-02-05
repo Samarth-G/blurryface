@@ -1,8 +1,20 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { JSX, SVGProps, useState } from "react";
+import { JSX, SVGProps, useState , useEffect} from "react";
 
 export function MainPage() {
+  const [title, setTitle] = useState("Loading");
+  const [objectList, setList] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/data")
+      .then(res => res.json()) // convert data to json
+      .then((data) =>  {
+        setTitle(data.title);
+        setList(data.objects);
+      })
+  }, []);
+
   return (
     <div className="flex justify-center bg-black">
       <div className="flex flex-col bg-gradient-to-r from-blue-400 via-white-500 to-green-500 min-h-screen w-full max-w-screen-xl">
@@ -18,7 +30,7 @@ export function MainPage() {
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    BlurryFace: Blur Faces in Videos
+                     {title}
                   </h1>
                   <p className="max-w-[800px] text-gray-500 md:text-xl text-left">
                     Upload your videos and we'll automatically blur all faces to protect privacy.
