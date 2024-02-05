@@ -8,6 +8,3 @@ def returnData():
         'title': "BlurryFace: Blur Faces in Videos",
         'objects': ["Table", "Chair", "Car"]
     })
-
-if __name__ == "__main__":
-    app.run(port=8000)
